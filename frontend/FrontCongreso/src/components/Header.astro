@@ -1,0 +1,124 @@
+---
+
+---
+
+<header
+    class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10"
+>
+    <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+    <div
+        class="max-w-7xl mx-auto flex items-center justify-between h-14 px-4 xl:px-8"
+    >
+        <a href="/" class="flex items-center gap-2 no-underline shrink-0">
+            <img
+                class="h-10 w-10 object-contain"
+                src="/logo-sistemas1.webp"
+                alt="Logo Congreso Sistemas"
+            />
+            <span class="text-base font-bold tracking-widest leading-none">
+                <span class="text-white">CONGRESO</span><span
+                    class="text-sky-600">SISTEMAS</span
+                >
+            </span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+            <a
+                href="/speakers"
+                class="relative text-white no-underline text-sm font-medium tracking-wide py-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 after:rounded-sm after:transition-all after:duration-300 hover:after:w-full"
+            >
+                Ponentes
+            </a>
+            <a
+                href="/workshops"
+                class="relative text-white no-underline text-sm font-medium tracking-wide py-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 after:rounded-sm after:transition-all after:duration-300 hover:after:w-full"
+            >
+                Talleristas
+            </a>
+            <a
+                href="/agenda"
+                class="relative text-white no-underline text-sm font-medium tracking-wide py-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 after:rounded-sm after:transition-all after:duration-300 hover:after:w-full"
+            >
+                Programa
+            </a>
+            <a
+                href="/patrocinadores"
+                class="relative text-white no-underline text-sm font-medium tracking-wide py-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 after:rounded-sm after:transition-all after:duration-300 hover:after:w-full"
+            >
+                Patrocinadores
+            </a>
+            <a
+                href="/mapa"
+                class="relative text-white/70 no-underline text-sm font-medium tracking-wide py-1 transition-colors duration-300 hover:text-white after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 after:rounded-sm after:transition-all after:duration-300 hover:after:w-full"
+            >
+                Mapa
+            </a>
+        </nav>
+
+        <a
+            href="/login"
+            class="hidden lg:inline-flex items-center justify-center px-5 py-2 text-xs font-semibold tracking-widest text-white bg-blue-600 rounded-lg no-underline shrink-0 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30"
+        >
+            <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-user object-cover w-4 h-4 mr-2"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z"
+                ></path><path
+                    d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z"
+                ></path></svg
+            >
+            LOG IN
+        </a>
+
+        <label
+            for="menu-toggle"
+            class="flex lg:hidden flex-col gap-1.5 cursor-pointer p-2"
+        >
+            <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+            <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+            <span class="block w-6 h-0.5 bg-white rounded-full"></span>
+        </label>
+    </div>
+
+    <nav
+        class="flex flex-col items-center gap-6 py-0 bg-black/80 backdrop-blur-2xl border-t border-white/10 lg:hidden max-h-0 overflow-hidden peer-checked:max-h-screen peer-checked:py-8 transition-all duration-500"
+    >
+        <a
+            href="/speakers"
+            class="text-white no-underline text-lg font-medium transition-colors duration-300 hover:text-white"
+            >Ponentes</a
+        >
+        <a
+            href="/workshops"
+            class="text-white no-underline text-lg font-medium transition-colors duration-300 hover:text-white"
+            >Talleristas</a
+        >
+        <a
+            href="/agenda"
+            class="text-white no-underline text-lg font-medium transition-colors duration-300 hover:text-white"
+        >
+            Programa
+        </a>
+        <a
+            href="/patrocinadores"
+            class="text-white no-underline text-lg font-medium transition-colors duration-300 hover:text-white"
+            >Patrocinadores</a
+        >
+        <a
+            href="/mapa"
+            class="text-white no-underline text-lg font-medium transition-colors duration-300 hover:text-white"
+            >Mapa</a
+        >
+        <a
+            href="/login"
+            class="mt-2 inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold tracking-widest text-white bg-blue-600 rounded-lg no-underline transition-all duration-200 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30"
+        >
+            LOG IN
+        </a>
+    </nav>
+</header>
