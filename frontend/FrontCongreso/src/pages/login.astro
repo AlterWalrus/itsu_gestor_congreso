@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <section
+        class="min-h-screen bg-[#0a0a0a] flex items-center justify-center relative overflow-hidden px-4"
+    >
+        <!-- Background Elements -->
+        <div
+            class="absolute inset-0 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"
+        >
+        </div>
+
+        <div
+            class="w-full max-w-sm bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-2xl relative z-10"
+        >
+            <div class="text-center mb-8">
+                <h1
+                    class="text-3xl font-bold bg-linear-to-r from-white via-blue-200 to-blue-500 bg-clip-text text-transparent mb-2"
+                >
+                    Bienvenido
+                </h1>
+                <p class="text-white/60 text-sm">
+                    Ingresa tus credenciales para acceder al sistema
+                </p>
+            </div>
+
+            <form class="space-y-6">
+                <!-- No. Control Input -->
+                <div class="space-y-2">
+                    <label
+                        for="control-number"
+                        class="text-sm font-medium text-white/80 block"
+                        >No. de Control</label
+                    >
+                    <div class="relative">
+                        <input
+                            type="text"
+                            id="control-number"
+                            name="control-number"
+                            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 pr-10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all font-light"
+                            placeholder="12345678"
+                            required
+                        />
+                        <div
+                            class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-white/50"
+                        >
+                            <!-- Icon for ID -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-5 h-5"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"></path>
+                                <path
+                                    d="M3 4m0 3a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3z"
+                                ></path>
+                                <path
+                                    d="M9 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+                                ></path>
+                                <path d="M15 8l2 0"></path>
+                                <path d="M15 12l2 0"></path>
+                                <path d="M7 16l10 0"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="space-y-2">
+                    <label
+                        for="password"
+                        class="text-sm font-medium text-white/80 block"
+                        >Contraseña</label
+                    >
+                    <div class="relative">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 pr-10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 transition-all font-light"
+                            placeholder="••••••••"
+                            required
+                        />
+                        <div
+                            class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-white/50"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center justify-between text-sm">
+                    <label class="flex items-center gap-2 cursor-pointer group">
+                        <input
+                            type="checkbox"
+                            class="w-4 h-4 rounded border-white/20 bg-white/5 text-blue-600 focus:ring-blue-500/50 focus:ring-offset-0 transition-colors"
+                        />
+                        <span
+                            class="text-white/60 group-hover:text-white/80 transition-colors"
+                            >Recordarme</span
+                        >
+                    </label>
+                    <a
+                        href="#"
+                        class="text-blue-400 hover:text-blue-300 transition-colors"
+                        >¿Olvidaste tu contraseña?</a
+                    >
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    class="w-full flex items-center justify-center gap-2 px-8 py-3.5 text-base font-semibold tracking-wider text-white bg-blue-600 rounded-lg transition-all duration-200 hover:bg-blue-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/30 group"
+                >
+                    <svg
+                        class="h-5 w-5 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                        ></path>
+                    </svg>
+                    INGRESAR
+                </button>
+            </form>
+
+            <div class="mt-6 border-t border-white/10 pt-6 text-center">
+                <a
+                    href="/"
+                    class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white transition-colors group"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 transition-transform group-hover:-translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>
