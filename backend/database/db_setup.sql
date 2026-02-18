@@ -7,9 +7,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 CREATE SCHEMA IF NOT EXISTS `congreso_db` DEFAULT CHARACTER SET utf8 ;
 USE `congreso_db` ;
 
--- -----------------------------------------------------
--- Table `congreso_db`.`alumnos`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `congreso_db`.`alumnos` (
   `no_control` INT NOT NULL,
   `nombres` VARCHAR(45) NOT NULL,
@@ -25,9 +23,6 @@ CREATE TABLE IF NOT EXISTS `congreso_db`.`alumnos` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `congreso_db`.`talleres`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `congreso_db`.`talleres` (
   `taller_id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
@@ -40,9 +35,6 @@ CREATE TABLE IF NOT EXISTS `congreso_db`.`talleres` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `congreso_db`.`alumno_taller`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `congreso_db`.`alumno_taller` (
   `alumno_taller_id` INT NOT NULL AUTO_INCREMENT,
   `alumnos_no_control` INT NOT NULL,
@@ -63,9 +55,6 @@ CREATE TABLE IF NOT EXISTS `congreso_db`.`alumno_taller` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `congreso_db`.`alumno_pago`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `congreso_db`.`alumno_pago` (
   `idalumno_pago` INT NOT NULL AUTO_INCREMENT,
   `alumnos_no_control` INT NOT NULL,
@@ -81,9 +70,17 @@ CREATE TABLE IF NOT EXISTS `congreso_db`.`alumno_pago` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `congreso_db`.`congreso_info`
--- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `congreso_db`.`usuarios_staff` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(100) NOT NULL,
+  `correo` VARCHAR(100) NOT NULL UNIQUE,
+  `contra` VARCHAR(255) NOT NULL,
+  `rol` ENUM('ADMIN', 'SUBADMIN') NOT NULL DEFAULT 'SUBADMIN',
+  `activo` BOOLEAN NOT NULL DEFAULT TRUE,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
 CREATE TABLE IF NOT EXISTS `congreso_db`.`congreso_info` (
   `congreso_id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
@@ -95,9 +92,6 @@ CREATE TABLE IF NOT EXISTS `congreso_db`.`congreso_info` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `congreso_db`.`tarjeta_info`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `congreso_db`.`tarjeta_info` (
   `tarjeta_info_id` INT NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(45) NOT NULL,
