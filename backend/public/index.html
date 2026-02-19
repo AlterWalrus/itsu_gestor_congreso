@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Login Congreso</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 8px; max-width: 300px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        input { width: 100%; margin-bottom: 10px; padding: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>Login de Prueba</h3>
+        <input type="text" id="id" placeholder="Correo o No. Control">
+        <input type="password" id="pass" placeholder="Contraseña">
+        <button onclick="hacerLogin()">Entrar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        async function hacerLogin() {
+            const id = document.getElementById('id').value;
+            const pass = document.getElementById('pass').value;
+            const resTag = document.getElementById('resultado');
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ identificador: id, contrasenia: pass })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    resTag.innerHTML = `GUD!: ${data.usuario.nombre} (${data.usuario.rol})`;
+                    resTag.style.color = "green";
+                } else {
+                    resTag.innerHTML = `shut: ${data.mensaje}`;
+                    resTag.style.color = "red";
+                }
+            } catch (err) {
+                resTag.innerHTML = "No se pudo conectar con el server";
+            }
+        }
+    </script>
+</body>
+</html>

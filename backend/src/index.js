@@ -1,39 +1,20 @@
-import express from 'express';
+import 'dotenv/config';
 import cors from 'cors';
+import express from 'express';
+
+import authRoutes from './routes/auth.routes.js';
 
 const app = express();
-const PORT = 3000;
-
-//Middlewares
-app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 3000;
 
-//Todo lo demas (solo pruebas por el momento)
-app.get('/', (req, res) => {
-    res.json({
-        mensaje: "hola, esta es una prueba"
-    });
-});
+app.use(express.static('public'));
+app.use(cors());
 
 
-app.get('/talleres', (req, res) => {
-    const talleresPrueba = [
-        { id: 1, nombre: "godot", tallerista: "jorge martinez" },
-        { id: 2, nombre: "skibidi", tallerista: "filipito" },
-        { id: 3, nombre: "toilet", tallerista: "buenas tardes" }
-    ];
-    res.json(talleresPrueba);
-});
+app.use('/api', authRoutes);
 
-
-app.get('/pago', (req, res) => {
-    res.json({
-        mensaje: "aqui usted puede subir su pago y asi"
-    });
-});
-
-
-app.listen(PORT, () => {
-    console.log('Servidor corriendo en http://localhost:' + PORT);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`corriendo en http://localhost:${PORT}`);
 });
